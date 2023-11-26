@@ -22,13 +22,12 @@ public class AppCardDeliveryTest {
 
     @BeforeEach
     void setUp() {
-        open("http://localhost:9999/");
+        open("http://localhost:9999");
         holdBrowserOpen = true;
     }
 
     @Test
     public void deliveryFormWorks () {
-        open("http://localhost:9999");
         $ ("[data-test-id='city'] input").setValue("Москва");
         String planningDate = generateDate(4,"dd.MM.yyyy");
         $ ("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
