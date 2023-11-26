@@ -16,14 +16,14 @@ import static com.codeborne.selenide.Configuration.holdBrowserOpen;
 
 public class AppCardDeliveryTest {
 
+    private String generateDate(int adddays, String pattern) {
+        return LocalDate.now().plusDays(adddays).format(DateTimeFormatter.ofPattern(pattern));
+    }
+
     @BeforeEach
     void setUp() {
         open("http://localhost:9999/");
         holdBrowserOpen = true;
-    }
-
-    private String generateDate(int adddays, String pattern) {
-        return LocalDate.now().plusDays(adddays).format(DateTimeFormatter.ofPattern(pattern));
     }
 
     @Test
